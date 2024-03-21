@@ -1,41 +1,41 @@
 <?php
 
-	# Incluyendo librerias necesarias #
+	# ORDEN DE PAGO #
     require "./code128.php";
 
     $pdf = new PDF_Code128('P','mm',array(80,258));
     $pdf->SetMargins(4,10,4);
     $pdf->AddPage();
     
-    # Encabezado y datos de la empresa #
+    #Alta Administración Tecnológica MC #
     $pdf->SetFont('Arial','B',10);
     $pdf->SetTextColor(0,0,0);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1",strtoupper("Nombre de empresa")),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1",strtoupper("ALIBEY SR. Ca")),0,'C',false);
     $pdf->SetFont('Arial','',9);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","RUC: 0000000000"),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Direccion San Salvador, El Salvador"),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Teléfono: 00000000"),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Email: correo@ejemplo.com"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","RUC: 0000"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","DireccionBOSQUE DE COLIMA MZN 6, LT 9, CASA 7, COLONIA ARBOLADA, 56560, IXTAPALUCA, ESTADO DE MÉXICO "),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Teléfono: 56560"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Email:contacto@bobocredi.com  "),0,'C',false);
 
     $pdf->Ln(1);
     $pdf->Cell(0,5,iconv("UTF-8", "ISO-8859-1","------------------------------------------------------"),0,0,'C');
     $pdf->Ln(5);
 
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Fecha: ".date("d/m/Y", strtotime("13-09-2022"))." ".date("h:s A")),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Fecha: ".date("21/03/24", strtotime("21-03-24"))." ".date("09:55:05")),0,'C',false);
     $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Caja Nro: 1"),0,'C',false);
     $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Cajero: Carlos Alfaro"),0,'C',false);
     $pdf->SetFont('Arial','B',10);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1",strtoupper("Ticket Nro: 1")),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1",strtoupper("Ticket Nro: 3627")),0,'C',false);
     $pdf->SetFont('Arial','',9);
 
     $pdf->Ln(1);
     $pdf->Cell(0,5,iconv("UTF-8", "ISO-8859-1","------------------------------------------------------"),0,0,'C');
     $pdf->Ln(5);
 
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Cliente: Carlos Alfaro"),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Documento: DNI 00000000"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Cliente: ANGEL GABRIEL BANDA PEREZ"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Documento: DNI 1274263600298"),0,'C',false);
     $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Teléfono: 00000000"),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Dirección: San Salvador, El Salvador, Centro America"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Dirección: SHaciendas del santu. 87000 Victoria tamaulipas),0,'C',false);
 
     $pdf->Ln(1);
     $pdf->Cell(0,5,iconv("UTF-8", "ISO-8859-1","-------------------------------------------------------------------"),0,0,'C');
@@ -54,13 +54,13 @@
 
 
     /*----------  Detalles de la tabla  ----------*/
-    $pdf->MultiCell(0,4,iconv("UTF-8", "ISO-8859-1","Nombre de producto a vender"),0,'C',false);
+    $pdf->MultiCell(0,4,iconv("UTF-8", "ISO-8859-1","ORDEN DE PAGO"),0,'C',false);
     $pdf->Cell(10,4,iconv("UTF-8", "ISO-8859-1","7"),0,0,'C');
-    $pdf->Cell(19,4,iconv("UTF-8", "ISO-8859-1","$10 USD"),0,0,'C');
-    $pdf->Cell(19,4,iconv("UTF-8", "ISO-8859-1","$0.00 USD"),0,0,'C');
-    $pdf->Cell(28,4,iconv("UTF-8", "ISO-8859-1","$70.00 USD"),0,0,'C');
+    $pdf->Cell(19,4,iconv("UTF-8", "ISO-8859-1","$1,200.00 MXN"),0,0,'C');
+    $pdf->Cell(19,4,iconv("UTF-8", "ISO-8859-1","$0.00 MXN"),0,0,'C');
+    $pdf->Cell(28,4,iconv("UTF-8", "ISO-8859-1","$70.00 MXN"),0,0,'C');
     $pdf->Ln(4);
-    $pdf->MultiCell(0,4,iconv("UTF-8", "ISO-8859-1","Garantía de fábrica: 2 Meses"),0,'C',false);
+    $pdf->MultiCell(0,4,iconv("UTF-8", "ISO-8859-1","Garantía de fábrica: 2SN"),0,'C',false);
     $pdf->Ln(7);
     /*----------  Fin Detalles de la tabla  ----------*/
 
@@ -72,14 +72,14 @@
 
     # Impuestos & totales #
     $pdf->Cell(18,5,iconv("UTF-8", "ISO-8859-1",""),0,0,'C');
-    $pdf->Cell(22,5,iconv("UTF-8", "ISO-8859-1","SUBTOTAL"),0,0,'C');
-    $pdf->Cell(32,5,iconv("UTF-8", "ISO-8859-1","+ $70.00 USD"),0,0,'C');
+    $pdf->Cell(22,5,iconv("UTF-8", "ISO-8859-1","$1,200.00MXN"),0,0,'C');
+    $pdf->Cell(32,5,iconv("UTF-8", "ISO-8859-1","+ $70.00 MXN"),0,0,'C');
 
     $pdf->Ln(5);
 
     $pdf->Cell(18,5,iconv("UTF-8", "ISO-8859-1",""),0,0,'C');
     $pdf->Cell(22,5,iconv("UTF-8", "ISO-8859-1","IVA (13%)"),0,0,'C');
-    $pdf->Cell(32,5,iconv("UTF-8", "ISO-8859-1","+ $0.00 USD"),0,0,'C');
+    $pdf->Cell(32,5,iconv("UTF-8", "ISO-8859-1","+ $0.00 MXN"),0,0,'C');
 
     $pdf->Ln(5);
 
@@ -88,20 +88,20 @@
     $pdf->Ln(5);
 
     $pdf->Cell(18,5,iconv("UTF-8", "ISO-8859-1",""),0,0,'C');
-    $pdf->Cell(22,5,iconv("UTF-8", "ISO-8859-1","TOTAL A PAGAR"),0,0,'C');
+    $pdf->Cell(22,5,iconv("UTF-8", "ISO-8859-1","$1,270.00MXN"),0,0,'C');
     $pdf->Cell(32,5,iconv("UTF-8", "ISO-8859-1","$70.00 USD"),0,0,'C');
 
     $pdf->Ln(5);
     
     $pdf->Cell(18,5,iconv("UTF-8", "ISO-8859-1",""),0,0,'C');
     $pdf->Cell(22,5,iconv("UTF-8", "ISO-8859-1","TOTAL PAGADO"),0,0,'C');
-    $pdf->Cell(32,5,iconv("UTF-8", "ISO-8859-1","$100.00 USD"),0,0,'C');
+    $pdf->Cell(32,5,iconv("UTF-8", "ISO-8859-1","$1,270.00MXN"),0,0,'C');
 
     $pdf->Ln(5);
 
     $pdf->Cell(18,5,iconv("UTF-8", "ISO-8859-1",""),0,0,'C');
     $pdf->Cell(22,5,iconv("UTF-8", "ISO-8859-1","CAMBIO"),0,0,'C');
-    $pdf->Cell(32,5,iconv("UTF-8", "ISO-8859-1","$30.00 USD"),0,0,'C');
+    $pdf->Cell(32,5,iconv("UTF-8", "ISO-8859-1","$0.00MXN"),0,0,'C');
 
     $pdf->Ln(5);
 
@@ -119,10 +119,10 @@
     $pdf->Ln(9);
 
     # Codigo de barras #
-    $pdf->Code128(5,$pdf->GetY(),"COD000001V0001",70,20);
+    $pdf->Code128(5,$pdf->GetY()," 1274263600298",70,20);
     $pdf->SetXY(0,$pdf->GetY()+21);
     $pdf->SetFont('Arial','',14);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","COD000001V0001"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","1274263600298"),0,'C',false);
     
     # Nombre del archivo PDF #
     $pdf->Output("I","Ticket_Nro_1.pdf",true);
